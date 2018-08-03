@@ -2,17 +2,16 @@
 Code directory for the master thesis working with Large Scale Sleep Staging.
 
 This code is based of the implementation created by [Supratak et al.](https://github.com/akaraspt/deepsleepnet).
-[This link](http://example.com/ "Title") has a title attribute.
 ## Files ##
-- **trainer**
-- **model**
-- **utils**
-- **data_loaders**
-- **gen\_train**
-- **gen\_predict**
-- **plot\_hypno**
-- **single\_predict**
-- **get\_perf**
+- **trainer**, contains code for training both parts of the networks.
+- **model**, contains code for the two parts of network, aswell as code for ensemble
+- **utils**, code for zoneout and other stuff.
+- **data_loaders**, code for data loading and preparing datasets
+- **gen\_train**, Used to train a model
+- **gen\_predict**, Used to predict on the same data as trained on
+- **get\_perf**, calculate measures from an output folder
+- **single\_predict**, predict but for one subject at a time
+- **plot\_hypno**, creates hypnogram from a directory if given a subjects labels
 
 ## Setup ##
 - Linux system
