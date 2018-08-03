@@ -14,9 +14,9 @@ from data_loaders.sleep_stage import (NUM_CLASSES,
 
 FLAGS = tf.app.flags.FLAGS
 
-tf.app.flags.DEFINE_string('data_dir', '/home/mhejsel/deepsleepnet/data/physionet_sleep/mix-signals',
+tf.app.flags.DEFINE_string('data_dir', 'data',
                            """Directory where to load training data.""")
-tf.app.flags.DEFINE_string('output_dir', '/media/sune/Data/Glostrup/mix-signals-2-',
+tf.app.flags.DEFINE_string('output_dir', 'output',
                            """Directory where to save trained models """
                            """and outputs.""")
 tf.app.flags.DEFINE_integer('n_folds', 5,
@@ -119,44 +119,44 @@ def main(argv=None):
         pretrained_model_path = pretrain(
             n_epochs=FLAGS.pretrain_epochs,
             fold_idx=i,
-            output_dir="/media/sune/Data/Glostrup/C3-M2-model-250",
-            data_dir="/media/sune/Data/Glostrup/C3-M2-data-250"
+            output_dir="/C3-M2-model-250",
+            data_dir="/C3-M2-data-250"
         )
         _ = finetune(
             model_path=pretrained_model_path,
             n_epochs=FLAGS.finetune_epochs,
             fold_idx=i,
-            output_dir="/media/sune/Data/Glostrup/C3-M2-model-250",
-            data_dir="/media/sune/Data/Glostrup/C3-M2-data-250"
+            output_dir="/C3-M2-model-250",
+            data_dir="/C3-M2-data-250"
         )
 
         #01-M2
         pretrained_model_path = pretrain(
             n_epochs=FLAGS.pretrain_epochs,
             fold_idx=i,
-            output_dir="/media/sune/Data/Glostrup/O1-M2-model-250",
-            data_dir="/media/sune/Data/Glostrup/O1-M2-data-250"
+            output_dir="/O1-M2-model-250",
+            data_dir="/O1-M2-data-250"
         )
         _ = finetune(
             model_path=pretrained_model_path,
             n_epochs=FLAGS.finetune_epochs,
             fold_idx=i,
-            output_dir="/media/sune/Data/Glostrup/O1-M2-model-250",
-            data_dir="/media/sune/Data/Glostrup/O1-M2-data-250"
+            output_dir="/O1-M2-model-250",
+            data_dir="/O1-M2-data-250"
         )
         #F3-M2
         pretrained_model_path = pretrain(
             n_epochs=FLAGS.pretrain_epochs,
             fold_idx=i,
-            output_dir="/media/sune/Data/Glostrup/F3-M2-model-250",
-            data_dir="/media/sune/Data/Glostrup/F3-M2-data-250"
+            output_dir="/F3-M2-model-250",
+            data_dir="/F3-M2-data-250"
         )
         _ = finetune(
             model_path=pretrained_model_path,
             n_epochs=FLAGS.finetune_epochs,
             fold_idx=i,
-            output_dir="/media/sune/Data/Glostrup/F3-M2-model-250",
-            data_dir="/media/sune/Data/Glostrup/F3-M2-data-250"
+            output_dir="/F3-M2-model-250",
+            data_dir="/F3-M2-data-250"
         )
 
 if __name__ == "__main__":
