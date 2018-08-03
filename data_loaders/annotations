@@ -1,0 +1,13 @@
+From glostrup:
+1=wake
+0=rem
+-1=N1
+-2=N2
+-3=N3
+
+Standard in deepsleep:
+W = 0
+N1 = 1
+N2 = 2
+N3 = 3
+REM = 4
