@@ -4,7 +4,6 @@ from generic_feat import GenFeatureNet
 from functools import partial
 from utils.new_zone import ZoneoutWrapper
 
-from nn_helpers import *
 class ProbSleepNet(GenFeatureNet):
 
     def __init__(
@@ -260,7 +259,7 @@ class ProbSleepNet(GenFeatureNet):
 
             # Softmax linear
             name = "l{}_softmax_linear".format(self.layer_idx)
-            network = fc(name=name, input_var=network, n_hiddens=self.n_classes, bias=0.0, wd=0)
+            network = self._fc(name=name, input_var=network, n_hiddens=self.n_classes, bias=0.0, wd=0)
             self.activations.append((name, network))
             self.layer_idx += 1
 
